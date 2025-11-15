@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Celebration - Premium Event Management Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff6b9d;
+            --secondary: #ff8fab;
+            --accent: #ff4d7a;
+            --light: #fff5f7;
+            --dark: #333;
+            --gray: #666;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe8e8 0%, #ffd6d6 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(90deg, #f1ebec, #ffb3c6, #ff8fab);
+
+
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            z-index: 1001;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            /* background: linear-gradient(45deg, var(--primary), var(--accent)); */
+            background-color: #fc3969;
+            color: white;
+            padding: 9px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.6);
+        }
+
+        /* Contact Buttons in Nav */
+        .contact-buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .contact-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .call-button {
+            background-color: #03A9F4;
+            color: white;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(img/img2.jpg) center/cover no-repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            color: var(--gray);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Venue Section */
+        .venue {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .venue-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .venue-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .venue-image img {
+            width: 100%;
+
+            height: 350px;
+            display: block;
+        }
+
+        .venue-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .venue-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .venue-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .venue-feature i {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        .venue-feature span {
+            font-weight: 500;
+        }
+
+        .venue-pricing {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .venue-pricing h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .package-header {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .package-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .package-price span {
+            font-size: 1rem;
+            font-weight: normal;
+        }
+
+        .package-features {
+            padding: 30px;
+        }
+
+        .package-features ul {
+            list-style: none;
+        }
+
+        .package-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            color: var(--gray);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .package-button {
+            display: block;
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .package-button:hover {
+            background: linear-gradient(45deg, var(--accent), var(--primary));
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* ==== DINNER MENU SECTION ==== */
+        .menu-section {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 100px 0;
+        }
+
+        .menu-section .section-title h2 {
+            color: var(--accent);
+        }
+
+        .menu-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.35);
+        }
+
+        .menu-category h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-left: 6px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        .menu-category h4 {
+            color: var(--accent);
+            margin: 15px 0 8px;
+            font-size: 1rem;
+        }
+
+        .menu-category table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .menu-category td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #f3d0d8;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .menu-notes {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: var(--gray);
+        }
+
+        .menu-notes li {
+            margin-bottom: 6px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .menu-card {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .menu-category h3 {
+                font-size: 1.3rem;
+            }
+
+            .menu-category td {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Contact Section */
+        .contact {
+            padding-top: 50px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: white;
+        }
+
+        .footer-column p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--light);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: white;
+            color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 107, 157, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 85%;
+            animation-delay: -10s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 80%;
+            left: 15%;
+            animation-delay: -7s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-details {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            /* Hamburger Menu Styles */
+            .hamburger {
+                display: flex;
+
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 40px;
+                transition: right 0.5s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            .cta-button {
+                display: none;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .venue-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .service-card,
+            .gallery-item,
+            .testimonial {
+                margin: 0 10px;
+            }
+
+            .nav-links {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="img/logo1.png" height="55px" width="75px">
+                </div>
+
+                <!-- Mobile Icons -->
+                <div class="mobile-icons">
+                    <a href="https://wa.me/918083072721" target="_blank" class="mobile-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="tel:9006652441" class="mobile-icon phone">
+                        <i class="fa fa-phone"></i>
+                    </a>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Home</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="contact-buttons">
+                    <a href="https://wa.me/918083072721" target="_blank" class="contact-button whatsapp-button">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="tel:9006652441" class="contact-button call-button">
+                        <i class="fa fa-phone"></i> +91-9006652441
+                    </a>
+                    <a href="#contact" class="cta-button">Reach Us</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <style>
+        /* Mobile icons hidden by default */
+        .mobile-icons {
+            display: none;
+            align-items: center;
+            gap: 30px;
+        }
+
+        /* Style for mobile icon buttons */
+        .mobile-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            /* WhatsApp color */
+            color: #fff;
+            font-size: 20px;
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .mobile-icons a.phone {
+            background-color: #03A9F4;
+            /* Your brand color for phone */
+        }
+
+        .mobile-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hide desktop buttons and show icons on small screens */
+        @media (max-width: 768px) {
+            .contact-buttons {
+                display: none;
+            }
+
+            .mobile-icons {
+                display: flex;
+            }
+        }
+    </style>
+
+
+    <style>
+        .hero-celebration {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+                url(img/u5.jpg) center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Pink-transparent overlay */
+        .hero-celebration::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(138, 82, 98, 0.3);
+            /* soft pink layer */
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 950px;
+            padding: 20px;
+        }
+
+        /* Modern text styling */
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: white;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons */
+        .hero-btns a {
+            text-decoration: none;
+            padding: 16px 38px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 0 12px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-pink {
+            background: #fc3969;
+            color: #fff;
+        }
+
+        .btn-pink:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 158, 62, 0.4);
+        }
+
+        .btn-outline {
+            color: white;
+            background: purple;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background: rgba(128, 0, 128, 0.8);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns a {
+                padding: 14px 30px;
+                font-size: 1rem;
+                margin: 5px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-btns {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .hero-btns a {
+                width: 220px;
+                margin: 0;
+            }
+        }
+    </style>
+
+    <section class="hero-celebration" id="home">
+        <div class="hero-content">
+            <h1>Transform Your Events into Unforgettable<br>Celebrations</h1>
+            <p>UFO Celebration offers premium event management services with attention to detail, creative designs, and
+                flawless execution for all your special occasions.</p>
+
+            <div class="hero-btns">
+                <a href="#gallery" class="btn-pink">View Gallery</a>
+                <a href="index.html" class="btn-outline">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events We Host Section -->
+    <section class="features" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Events We Host</h2>
+                <p>We host a wide range of occasions — from weddings to corporate functions and grand celebrations.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-ring"></i></div>
+                    <h3>Weddings</h3>
+                    <p>Celebrate your dream wedding with elegance and memorable experiences.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Marriages</h3>
+                    <p>Host traditional or modern marriage ceremonies with full arrangements.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Reunions</h3>
+                    <p>Reconnect and relive old memories in our spacious, lively environment.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-theater-masks"></i></div>
+                    <h3>Theme Party</h3>
+                    <p>Customized decorations and themes to match your imagination.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <h3>Birthday Party</h3>
+                    <p>Make birthdays unforgettable with décor, music, and delicious food.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Engagement Party</h3>
+                    <p>Celebrate your new beginnings with a romantic engagement setup.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Receptions</h3>
+                    <p>Host grand wedding receptions with a perfect blend of style and service.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-female"></i></div>
+                    <h3>Bridal Shower</h3>
+                    <p>Elegant décor and ambience for a memorable bridal shower experience.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-guitar"></i></div>
+                    <h3>Music Festival</h3>
+                    <p>Ideal stage setup and sound system for live performances and fests.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-cocktail"></i></div>
+                    <h3>Cocktail Party</h3>
+                    <p>Chill and celebrate with friends at our lively cocktail party venue.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-birthday-cake"></i></div>
+                    <h3>New Year Party</h3>
+                    <p>Welcome the New Year with dazzling lights, music, and celebration.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gift"></i></div>
+                    <h3>Christmas Party</h3>
+                    <p>Festive décor, music, and joyful vibes for perfect Christmas moments.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Mehandi</h3>
+                    <p>Vibrant Mehndi functions with colorful décor and cultural essence.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-mosque"></i></div>
+                    <h3>Nikah</h3>
+                    <p>Elegant setup for traditional Nikah ceremonies with grace and charm.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Corporate Party</h3>
+                    <p>Professional venue for corporate parties, seminars, and conferences.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Political Gatherings</h3>
+                    <p>Spacious and secure venue for large-scale political meetings or rallies.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-store"></i></div>
+                    <h3>Retail Expo</h3>
+                    <p>Modern infrastructure to showcase products and connect with audiences.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users-cog"></i></div>
+                    <h3>Annual General Meetings</h3>
+                    <p>Professional setup for AGMs and business meetups with full support.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-spa"></i></div>
+                    <h3>Yoga Events</h3>
+                    <p>Peaceful ambience for wellness, meditation, and yoga sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .features {
+            background: #ffeaea;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            color: #ff4d79;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #444;
+            margin-bottom: 40px;
+        }
+
+        /* 3-column responsive grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 77, 121, 0.25);
+        }
+
+        .feature-icon {
+            background: #ff4d79;
+            color: #fff;
+            font-size: 28px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: #ff6b91;
+            box-shadow: 0 0 10px rgba(255, 77, 121, 0.5);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            color: #222;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+    </style>
+
+
+    <!-- Venue Section -->
+    <section class="venue" id="venue">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Venue</h2>
+                <p>Experience our beautifully designed venue with modern amenities</p>
+            </div>
+            <div class="venue-details">
+                <div class="venue-image">
+                    <img src="img/u10.jpg" alt="UFO Celebration Venue">
+                </div>
+                <div class="venue-info">
+                    <h3>More Than a Venue — It’s an Experience in a Premium AC Hall</h3>
+                    <p>Whether it’s a dreamy wedding, a corporate seminar, or a social gathering — UFO Celebration
+                        offers a refined, climate-controlled setting that blends comfort, convenience, and class.</p>
+                    <br>
+
+
+                    <div class="venue-features">
+                        <div class="venue-feature">
+                            <i class="fas fa-users"></i>
+                            <span>Capacity: 200 people</span>
+                        </div>
+                        <div class="venue-feature">
+                            <i class="fas fa-chair"></i>
+                            <span>Seating: 100 people</span>
+                        </div>
+                        <div class="venue-feature">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Air Conditioned</span>
+                        </div>
+                        <div class="venue-feature">
+                            <i class="fas fa-utensils"></i>
+                            <span>Multicuisine Catering</span>
+                        </div>
+                        <div class="venue-feature">
+                            <i class="fas fa-car"></i>
+                            <span>Parking for 10 cars</span>
+                        </div>
+                        <div class="venue-feature">
+                            <i class="fas fa-music"></i>
+                            <span>Stage & Sound System</span>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dinner Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dinner Menu</h2>
+                <p>Explore our complete dinner offerings at Aditi Community Centre. Choose items as per your package
+                    plan.</p>
+            </div>
+
+            <!-- Card 1: Soup + Starter -->
+            <div class="menu-card">
+                <div class="menu-category">
+                    <h3>Soup (Choose Any One)</h3>
+                    <table>
+                        <tr>
+                            <td>Veg Corn Soup</td>
+                        </tr>
+                        <tr>
+                            <td>Tomato Soup</td>
+                        </tr>
+                        <tr>
+                            <td>Manchow Soup</td>
+                        </tr>
+                        <tr>
+                            <td>Veg Hot & Sour Soup</td>
+                        </tr>
+                        <tr>
+                            <td>Veg Noodle Soup</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-category">
+                    <h3>Starter (Choose Any Four)</h3>
+                    <table>
+                        <tr>
+                            <td>Veg Balls</td>
+                        </tr>
+                        <tr>
+                            <td>Baby Corn Fry</td>
+                        </tr>
+                        <tr>
+                            <td>Veg Manchurian</td>
+                        </tr>
+                        <tr>
+                            <td>Paneer Chilli</td>
+                        </tr>
+                        <tr>
+                            <td>Paneer Tikka</td>
+                        </tr>
+                        <tr>
+                            <td>Veg Cutlet</td>
+                        </tr>
+                        <tr>
+                            <td>Veg Roll</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Card 2: Main Course + Salad -->
+            <div class="menu-card">
+                <div class="menu-category">
+                    <h3>Main Course</h3>
+                    <h4>Vegetables (Choose Any Two)</h4>
+                    <table>
+                        <tr>
+                            <td>Mattar Paneer</td>
+                        </tr>
+                        <tr>
+                            <td>Paneer Butter Masala</td>
+                        </tr>
+                        <tr>
+                            <td>Mix Veg Curry</td>
+                        </tr>
+                        <tr>
+                            <td>Aloo Dum</td>
+                        </tr>
+                        <tr>
+                            <td>Dal Makhani</td>
+                        </tr>
+                        <tr>
+                            <td>Chana Masala</td>
+                        </tr>
+                    </table>
+
+                    <h4>Bread / Rice</h4>
+                    <table>
+                        <tr>
+                            <td>Naan</td>
+                        </tr>
+                        <tr>
+                            <td>Tandoori Roti</td>
+                        </tr>
+                        <tr>
+                            <td>Jeera Rice</td>
+                        </tr>
+                        <tr>
+                            <td>Pulao</td>
+                        </tr>
+                        <tr>
+                            <td>Fried Rice</td>
+                        </tr>
+                    </table>
+
+                    <h4>Raita</h4>
+                    <table>
+                        <tr>
+                            <td>Boondi Raita</td>
+                        </tr>
+                        <tr>
+                            <td>Mixed Veg Raita</td>
+                        </tr>
+                        <tr>
+                            <td>Fruit Raita</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-category">
+                    <h3>Salad (Choose Any One)</h3>
+                    <table>
+                        <tr>
+                            <td>Green Salad</td>
+                        </tr>
+                        <tr>
+                            <td>Russian Salad</td>
+                        </tr>
+                        <tr>
+                            <td>Tossed Salad</td>
+                        </tr>
+                        <tr>
+                            <td>Fruit Salad</td>
+                        </tr>
+                    </table><br>
+                    <div class="menu-category">
+                        <h3>Desserts (Choose Any One)</h3>
+                        <table>
+                            <tr>
+                                <td>Rasmalai</td>
+                            </tr>
+                            <tr>
+                                <td>Gulab Jamun</td>
+                            </tr>
+                            <tr>
+                                <td>Rabri</td>
+                            </tr>
+                            <tr>
+                                <td>Gajar Halwa</td>
+                            </tr>
+                            <tr>
+                                <td>Ice Cream</td>
+                            </tr>
+                            <tr>
+                                <td>Fruit Custard</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <div class="menu-category">
+                            <h3>Fish (Choose Any One)</h3>
+                            <table>
+                                <tr>
+                                    <td>Fish Fry</td>
+                                </tr>
+                                <tr>
+                                    <td>Fish Curry</td>
+                                </tr>
+                                <tr>
+                                    <td>Fish Korma</td>
+                                </tr>
+                                <tr>
+                                    <td>Fish Cutlet</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Card 3: Desserts + Non Veg -->
+            <div class="menu-card">
+
+                <div class="menu-category">
+                    <h3>Non-Veg (Choose Any One)</h3>
+                    <table>
+                        <tr>
+                            <td>Chicken Curry</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Butter Masala</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Chaap</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Korma</td>
+                        </tr>
+                        <tr>
+                            <td>Chicken Do Pyaza</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="menu-category">
+                    <h3>Notes & Rules</h3>
+                    <ul class="menu-notes">
+                        <li>Hall timing is from 10:00 AM to 10:00 PM.</li>
+                        <li>Extra charges will apply for additional hours.</li>
+                        <li>Advance payment is mandatory at the time of booking.</li>
+                        <li>Cleanup after the event is compulsory.</li>
+                        <li>Any damages caused will be chargeable to the customer.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Event Gallery</h2>
+                <p>Take a look at some of our beautifully executed events and celebrations</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/u1.jpg" alt="Wedding Event">
+                    <div class="gallery-overlay">
+
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/uu1.jpg" alt="Birthday Party">
+                    <div class="gallery-overlay">
+
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/u3.jpg" alt="Corporate Event">
+                    <div class="gallery-overlay">
+
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/u4.jpg" alt="Anniversary Party">
+                    <div class="gallery-overlay">
+
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/u5.jpg" alt="Stage Decor">
+                    <div class="gallery-overlay">
+
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/u6.jpg" alt="Entertainment">
+                    <div class="gallery-overlay">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Slideshows Section -->
+    <section class="event-slides" id="slides">
+        <div class="section-title">
+            <h2>Memorable Moments at UFO</h2>
+            <p>Experience glimpses of our most celebrated events — from birthdays to weddings and corporate gatherings.
+            </p>
+        </div>
+
+        <!-- Birthday Celebrations -->
+        <div class="event-category">
+            <h3>Birthday Celebrations</h3>
+            <div class="slide-track">
+                <div class="slide"><img src="img/u1.jpg" alt="Birthday 1"></div>
+                <div class="slide"><img src="img/uuu26.jpg" alt="Birthday 1"></div>
+                <div class="slide"><img src="img/u5.jpg" alt="Birthday 2"></div>
+                <div class="slide"><img src="img/u6.jpg" alt="Birthday 1"></div>
+                <div class="slide"><img src="img/u7.jpg" alt="Birthday 2"></div>
+
+                <div class="slide"><img src="img/u11.jpg" alt="Birthday 2"></div>
+                <!-- <div class="slide"><img src="img/u12.jpg" alt="Birthday 1"></div> -->
+                <div class="slide"><img src="img/u13.jpg" alt="Birthday 2"></div>
+                <div class="slide"><img src="img/uu1.jpg" alt="Birthday 3"></div>
+                <div class="slide"><img src="img/uu3.jpg" alt="Birthday 4"></div>
+                <div class="slide"><img src="img/uu5.jpg" alt="Birthday 2"></div>
+                <div class="slide"><img src="img/uu6.jpg" alt="Birthday 3"></div>
+
+                <div class="slide"><img src="img/uu12.jpg" alt="Birthday 4"></div>
+            </div>
+        </div>
+
+        <!-- Marriages & Related Events -->
+        <div class="event-category">
+            <h3>Marriages, Receptions, Sangeet, Haldi</h3>
+            <div class="slide-track">
+                <div class="slide"><img src="img/u2.jpg" alt="Marriage 1"></div>
+                <div class="slide"><img src="img/uu2.jpg" alt="Marriage 2"></div>
+                <div class="slide"><img src="img/uuu10.jpg" alt="Marriage 4"></div>
+                <div class="slide"><img src="img/uu15.jpg" alt="Marriage 1"></div>
+                <div class="slide"><img src="img/uu13.jpg" alt="Marriage 4"></div>
+                <div class="slide"><img src="img/uuu28.jpg" alt="Marriage 1"></div>
+                <div class="slide"><img src="img/uu15.jpg" alt="Marriage 2"></div>
+                <div class="slide"><img src="img/uuu12.jpg" alt="Marriage 3"></div>
+                <div class="slide"><img src="img/uuu13.jpg" alt="Marriage 4"></div>
+                <div class="slide"><img src="img/uuu14.jpg" alt="Marriage 1"></div>
+                <div class="slide"><img src="img/uuu15.jpg" alt="Marriage 2"></div>
+                <div class="slide"><img src="img/uuu30.jpg" alt="Marriage 3"></div>
+
+            </div>
+        </div>
+
+        <!-- Corporate Events -->
+        <div class="event-category">
+            <h3>Corporate Events</h3>
+            <div class="slide-track">
+                <div class="slide"><img src="img/uu7.jpg" alt="Corporate 1"></div>
+                <div class="slide"><img src="img/uu8.jpg" alt="Corporate 2"></div>
+                <div class="slide"><img src="img/uuu5.jpg" alt="Corporate 3"></div>
+                <div class="slide"><img src="img/uuu24.jpg" alt="Corporate 4"></div>
+                <div class="slide"><img src="img/uu7.jpg" alt="Corporate 1"></div>
+                <div class="slide"><img src="img/uu8.jpg" alt="Corporate 2"></div>
+                <div class="slide"><img src="img/uuu5.jpg" alt="Corporate 3"></div>
+                <div class="slide"><img src="img/uuu24.jpg" alt="Corporate 4"></div>
+
+            </div>
+        </div>
+    </section>
+    <style>
+        .event-slides {
+            background: #ffe6ee;
+            padding: 60px 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .section-title h2 {
+            color: #ff4d79;
+            font-weight: 700;
+            font-size: 2.2rem;
+        }
+
+        .section-title p {
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .event-category {
+            margin-bottom: 70px;
+        }
+
+        .event-category h3 {
+            color: #ff4d79;
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        /* Slider container */
+        .slide-track {
+            display: flex;
+            width: max-content;
+            animation: scroll 40s linear infinite;
+        }
+
+        .slide {
+            width: 25%;
+            min-width: 350px;
+            margin-right: 20px;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(255, 77, 121, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .slide img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Right to Left Animation */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide img {
+                height: 250px;
+            }
+
+            .slide {
+                min-width: 250px;
+            }
+        }
+    </style>
+
+
+
+    <!-- UFO Video Gallery Section Start -->
+    <section class="video-gallery-section" id="ufo-videos">
+        <div class="container">
+            <div class="text-center mb-5 video-gallery-header">
+                <h2 class="video-gallery-title">UFO Event Highlights</h2>
+                <p class="video-gallery-subtitle">
+                    Relive the most memorable moments from our grand celebrations and events.
+                </p>
+            </div>
+
+            <div class="video-gallery">
+                <div class="video-card">
+                    <video controls poster="img/video-thumb1.jpg">
+                        <source src="img/WhatsApp Video 2025-11-13 at 15.38.26_6da6c966.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="video-card">
+                    <video controls poster="img/video-thumb3.jpg">
+                        <source src="img/video3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="video-card">
+                    <video controls poster="img/video-thumb2.jpg">
+                        <source src="img/video4.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="video-card">
+                    <video controls poster="img/video-thumb2.jpg">
+                        <source src="img/video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- UFO Video Gallery Section End -->
+
+    <style>
+        .video-gallery-section {
+            background: linear-gradient(135deg, #ffe6ee, #fff);
+            padding: 80px 20px;
+        }
+
+        .video-gallery-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .video-gallery-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ff4d79;
+            margin-bottom: 10px;
+        }
+
+        .video-gallery-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 77, 121, 0.2);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 77, 121, 0.3);
+        }
+
+        .video-card video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .video-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .video-gallery-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Allow only one video to play at a time
+        document.addEventListener("DOMContentLoaded", function () {
+            const videos = document.querySelectorAll(".video-card video");
+
+            videos.forEach((video) => {
+                video.addEventListener("play", () => {
+                    videos.forEach((v) => {
+                        if (v !== video) v.pause();
+                    });
+                });
+            });
+        });
+    </script>
+
+
+
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+                <p>Hear from our satisfied clients who celebrated their special moments with us</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <p class="testimonial-text">"UFO Celebration made our wedding absolutely magical! Their attention to
+                        detail and professional approach ensured everything went perfectly. Our guests are still talking
+                        about how beautiful the decor was and how smoothly everything was organized."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Priya & Raj Sharma</h4>
+                            <p>Wedding Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Contact us to plan your perfect celebration or to schedule a consultation</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Create Your Dream Event</h3>
+                    <p>Our team of event specialists is ready to help you plan and execute a memorable celebration.
+                        Reach out to us for a consultation, pricing details, or to discuss your specific requirements.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+91-9204058013, +91-9006652441 </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>+91-8083072721</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>ufoanisabad@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        </div>
+                        <!-- Event Type Field -->
+                        <div class="form-group">
+                            <label for="eventType">Event Type</label>
+                            <select id="eventType" name="eventType" class="form-control" required>
+                                <option value="">-- Select Event Type --</option>
+                                <option>Weddings</option>
+                                <option>Marriages</option>
+                                <option>Reunions</option>
+                                <option>Theme Party</option>
+                                <option>Birthday Party</option>
+                                <option>Engagement Party</option>
+                                <option>Receptions</option>
+                                <option>Bridal Shower</option>
+                                <option>Music Festival</option>
+                                <option>Cocktail Party</option>
+                                <option>New Year Party</option>
+                                <option>Christmas Party</option>
+                                <option>Mehandi</option>
+                                <option>Nikah</option>
+                                <option>Corporate Party</option>
+                                <option>Political Gatherings</option>
+                                <option>Retail Expo</option>
+                                <option>Annual General Meetings</option>
+                                <option>Yoga Events</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="event-date">Preferred Event Date</label>
+                            <input type="date" id="event-date" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control"
+                                placeholder="Tell us about your event requirements"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <a href="https://maps.app.goo.gl/Z9KovzDrhmucgvQJ8" target="_blank"
+            style="display:block; margin-top:10px; text-align:center; font-weight:600; color:#ff6b9d;">
+            👉 View on Google Maps
+        </a><br>
+
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>UFO Celebration</h3>
+                    <p>Creating unforgettable celebrations with creativity, precision, and passion. We transform your
+                        vision into reality with our premium event management services.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/ufo.celebration" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <!-- <a href="#" target="_blank"><i class="fab fa-instagram"></i></a> -->
+                        <a href="https://www.linkedin.com/company/96171231/admin/page-posts/published/"
+                            target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://wa.me/918083072721" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/@ufocelebrationpartylounge3528" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#venue">Venue</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> UFO Celebration Party Lounge, 6th Floor, UFO Mall, Anisabad
+                        Chauraha, Patna, Bihar, 800002</p>
+                    <p><i class="fas fa-phone"></i> +91-9006652441</p>
+                    <p><i class="fab fa-whatsapp"></i> +91-8083072721</p>
+                    <p><i class="fas fa-envelope"></i> ufoanisabad@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UFO Celebration. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Sticky header
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Add floating elements dynamically
+        document.addEventListener('DOMContentLoaded', function () {
+            const floatingContainer = document.querySelector('.floating-elements');
+            for (let i = 0; i < 6; i++) {
+                const element = document.createElement('div');
+                element.classList.add('floating-element');
+                element.style.width = element.style.height = (Math.random() * 100 + 50) + 'px';
+                element.style.top = Math.random() * 100 + '%';
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDelay = (Math.random() * -20) + 's';
+                element.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                floatingContainer.appendChild(element);
+            }
+        });
+    </script>
+</body>
+
+</html>

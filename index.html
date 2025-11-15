@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditi Marriage Hall & UFO Celebration</title>
+    <link rel="icon" type="image/png" href="img/logo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #ffe8e8 0%, #ffd6d6 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+/* ==== TOP BAR ==== */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff6b9d, #ff8fab, #ffb3c6);
+    padding: 12px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Moving images */
+.marquee {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+    animation: moveBothWays 10s linear infinite alternate;
+}
+
+.marquee img {
+    width: 200px;
+    height: 80px;
+    border-radius: 5%;
+    /* border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); */
+    transition: transform 0.3s ease;
+}
+
+.marquee img:hover {
+    transform: scale(1.1);
+}
+
+/* Animation: Right to Left then Left to Right */
+@keyframes moveBothWays {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+        /* ==== MAIN SECTION ==== */
+        .cards-container {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            padding: 20px;
+            max-width: 1300px;
+            margin-inline: auto;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 480px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 48% 48% 0 0;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(255, 107, 157, 0.25);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(255, 107, 157, 0.4);
+        }
+
+        .card-image {
+            height: 350px;
+            width: 100%;
+            border-radius: 45% 45% 0 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.7s ease;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 15px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(255, 245, 247, 0.9));
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.9rem;
+            color: #ff4d7a;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card-title i {
+            margin-right: 15px;
+            font-size: 1.6rem;
+            background: linear-gradient(45deg, #ff6b9d, #ff4d7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            background: linear-gradient(45deg, #ff6b9d, #ff4d7a);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(255, 107, 157, 0.5);
+        }
+
+        .card-button i {
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .card-button:hover i {
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ==== FLOATING ELEMENTS ==== */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 107, 157, 0.15);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            left: 80%;
+            animation-delay: -5s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 85%;
+            animation-delay: -10s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 80%;
+            left: 15%;
+            animation-delay: -7s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
+        }
+
+        /* ==== RESPONSIVE ==== */
+        @media (max-width: 768px) {
+            .marquee {
+                font-size: 16px;
+            }
+
+            .card {
+                height: 400px;
+            }
+
+            .card-image {
+                height: 260px;
+            }
+
+            .card-title {
+                font-size: 22px;
+            }
+
+            .cards-container {
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </div>
+<div class="top-bar">
+  <div class="marquee-box">
+    <div class="scroll">
+      <img src="img/img3.jpg" alt="Aditi">
+      <img src="img/img3.jpg" alt="Aditi">
+    </div>
+  </div>
+
+  <div class="marquee-box">
+    <div class="scroll">
+      <img src="img/uu3.jpg" alt="UFO">
+      <img src="img/uu3.jpg" alt="UFO">
+      
+     
+    </div>
+  </div>
+</div>
+
+<style>
+.top-bar {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(90deg, #ff6699, #ff99cc);
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* Each half */
+.marquee-box {
+  flex: 1;
+  height: 60px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Scrolling container inside each box */
+.scroll {
+  display: flex;
+  width: 200%;
+  animation: scrollBoth 8s linear infinite alternate;
+}
+
+/* Duplicate images for seamless fill */
+.scroll img {
+  width: 50%;
+  height: 60px;
+  object-fit: cover;
+ 
+}
+
+/* Smooth left-right scroll with no gap */
+@keyframes scrollBoth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
+
+
+
+
+    <!-- Cards Section -->
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-image" style="background-image: url('img/img3.jpg');"></div>
+            <div class="card-content">
+                <h2 class="card-title"><i class="fas fa-heart"></i>Aditi Marriage Hall</h2>
+                <a href="aditi_marrage_hall.html" target="_blank" class="card-button">
+                    Visit Website <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-image" style="background-image: url('img/uuu26.jpg');"></div>
+            <div class="card-content">
+                <h2 class="card-title"><i class="fas fa-glass-cheers"></i>UFO Celebration</h2>
+                <a href="efo.html" target="_blank" class="card-button">
+                    Visit Website <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ripple Effect Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.card-button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+
+                    ripple.style.width = ripple.style.height = `${size}px`;
+                    ripple.style.left = `${x}px`;
+                    ripple.style.top = `${y}px`;
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.backgroundColor = 'rgba(255,255,255,0.5)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.pointerEvents = 'none';
+                    this.appendChild(ripple);
+
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
