@@ -1042,94 +1042,103 @@
     </div>
 
     <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">
-                    <img src="img/logo1.png" height="55px" width="75px">
-                </div>
+   <header>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/logo1.png" height="55px" width="75px">
+            </div>
 
-                <!-- Mobile Icons -->
-                <div class="mobile-icons">
-                    <a href="https://wa.me/918083072721" target="_blank" class="mobile-icon whatsapp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="tel:9006652441" class="mobile-icon phone">
-                        <i class="fa fa-phone"></i>
-                    </a>
-                </div>
+            <!-- Mobile Icons -->
+            <div class="mobile-icons">
+                <a href="https://wa.me/918083072721" target="_blank" class="mobile-icon whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="tel:+91-9204058016" class="mobile-icon phone">
+                    <i class="fa fa-phone"></i>
+                </a>
 
-                <!-- Hamburger Menu -->
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <!-- NEW – Location Icon for Mobile -->
+                <a href="https://maps.app.goo.gl/Z9KovzDrhmucgvQJ8" target="_blank" class="mobile-icon location">
+                    <i class="fa fa-map-marker-alt"></i>
+                </a>
+            </div>
 
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="#menu">Menu</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#contact">Contact</a>
-                </div>
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
 
-                <div class="contact-buttons">
-                    <a href="https://wa.me/918083072721" target="_blank" class="contact-button whatsapp-button">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="tel:9006652441" class="contact-button call-button">
-                        <i class="fa fa-phone"></i> +91-9006652441
-                    </a>
-                    <a href="#contact" class="cta-button">Reach Us</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <style>
-        /* Mobile icons hidden by default */
-        .mobile-icons {
-            display: none;
-            align-items: center;
-            gap: 30px;
-        }
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
 
-        /* Style for mobile icon buttons */
-        .mobile-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #25D366;
-            /* WhatsApp color */
-            color: #fff;
-            font-size: 20px;
-            height: 38px;
-            width: 38px;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+            <div class="contact-buttons">
+                <a href="https://wa.me/918083072721" target="_blank" class="contact-button whatsapp-button">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="tel:+91-9204058016" class="contact-button call-button">
+                    <i class="fa fa-phone"></i> +91-9204058016
+                </a>
+                <a href="#contact" class="cta-button">Reach Us</a>
+                <a href="https://maps.app.goo.gl/Z9KovzDrhmucgvQJ8" class="cta-button" style="background-color: purple;">Location</a>
+            </div>
+        </nav>
+    </div>
+</header>
+<style>
+    /* Mobile icons hidden by default */
+.mobile-icons {
+    display: none;
+    align-items: center;
+    gap: 30px;
+}
 
-        .mobile-icons a.phone {
-            background-color: #03A9F4;
-            /* Your brand color for phone */
-        }
+/* Style for mobile icon buttons */
+.mobile-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* WhatsApp color */
+    color: #fff;
+    font-size: 20px;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: 0.3s;
+}
 
-        .mobile-icons a:hover {
-            transform: scale(1.1);
-        }
+/* Phone icon color */
+.mobile-icons a.phone {
+    background-color: #03A9F4;
+}
 
-        /* Hide desktop buttons and show icons on small screens */
-        @media (max-width: 768px) {
-            .contact-buttons {
-                display: none;
-            }
+/* NEW – Location icon color */
+.mobile-icons a.location {
+    background-color: purple;
+}
 
-            .mobile-icons {
-                display: flex;
-            }
-        }
-    </style>
+.mobile-icons a:hover {
+    transform: scale(1.1);
+}
 
+/* Show mobile icons & hide desktop buttons on small screens */
+@media (max-width: 768px) {
+    .contact-buttons {
+        display: none;
+    }
+    .mobile-icons {
+        display: flex;
+    }
+}
+
+</style>
 
     <style>
         .hero-celebration {
@@ -1507,7 +1516,7 @@
             </div>
             <div class="venue-details">
                 <div class="venue-image">
-                    <img src="img/u10.jpg" alt="UFO Celebration Venue">
+                    <img src="img/aboutimguf.jpg" alt="UFO Celebration Venue">
                 </div>
                 <div class="venue-info">
                     <h3>More Than a Venue — It’s an Experience in a Premium AC Hall</h3>
@@ -1776,7 +1785,7 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="img/u1.jpg" alt="Wedding Event">
+                    <img src="img/u0.jpg" alt="Wedding Event">
                     <div class="gallery-overlay">
 
                     </div>
@@ -1788,7 +1797,7 @@
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="img/u3.jpg" alt="Corporate Event">
+                    <img src="img/u00.jpg" alt="Corporate Event">
                     <div class="gallery-overlay">
 
                     </div>
@@ -1827,7 +1836,17 @@
         <div class="event-category">
             <h3>Birthday Celebrations</h3>
             <div class="slide-track">
-                <div class="slide"><img src="img/u1.jpg" alt="Birthday 1"></div>
+                <div class="slide"><img src="img/uf1.jpg" alt="Birthday 3"></div>
+                <div class="slide"><img src="img/uf2.jpg" alt="Birthday 4"></div>
+                <div class="slide"><img src="img/uf3.jpg" alt="Birthday 2"></div>
+                <div class="slide"><img src="img/uf4.jpg" alt="Birthday 3"></div>
+
+                <div class="slide"><img src="img/uf5.jpg" alt="Birthday 4"></div>
+                <div class="slide"><img src="img/uf6.jpg" alt="Birthday 1"></div>
+                 <div class="slide"><img src="img/uf7.jpg" alt="Birthday 4"></div>
+                <div class="slide"><img src="img/uf8.jpg" alt="Birthday 1"></div>
+                 <div class="slide"><img src="img/uf9.jpg" alt="Birthday 4"></div>
+               
                 <div class="slide"><img src="img/uuu26.jpg" alt="Birthday 1"></div>
                 <div class="slide"><img src="img/u5.jpg" alt="Birthday 2"></div>
                 <div class="slide"><img src="img/u6.jpg" alt="Birthday 1"></div>
@@ -1975,28 +1994,28 @@
 
             <div class="video-gallery">
                 <div class="video-card">
-                    <video controls poster="img/video-thumb1.jpg">
+                    <video controls poster="img/image copy.png">
                         <source src="img/WhatsApp Video 2025-11-13 at 15.38.26_6da6c966.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
 
                 <div class="video-card">
-                    <video controls poster="img/video-thumb3.jpg">
+                    <video controls poster="img/image copy 2.png">
                         <source src="img/video3.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
 
                 <div class="video-card">
-                    <video controls poster="img/video-thumb2.jpg">
+                    <video controls poster="img/image copy 3.png">
                         <source src="img/video4.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
 
                 <div class="video-card">
-                    <video controls poster="img/video-thumb2.jpg">
+                    <video controls poster="img/image copy 5.png">
                         <source src="img/video2.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -2221,12 +2240,66 @@
                 </div>
             </div>
         </div>
-        <a href="https://maps.app.goo.gl/Z9KovzDrhmucgvQJ8" target="_blank"
-            style="display:block; margin-top:10px; text-align:center; font-weight:600; color:#ff6b9d;">
-            👉 View on Google Maps
-        </a><br>
+        <br>
 
     </section>
+
+
+    <script>
+document.querySelector("form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const eventType = document.getElementById("eventType").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const eventDate = document.getElementById("event-date").value;
+
+    // Default Hall value → UFO Celebration
+    const hall = "UFO Celebration";
+
+    // Convert date → Google format
+    let year = "", month = "", day = "";
+    if (eventDate) {
+        const d = new Date(eventDate);
+        year = d.getFullYear();
+        month = d.getMonth() + 1;
+        day = d.getDate();
+    }
+
+    const formData = new FormData();
+
+    // Google Form Fields
+    formData.append("entry.1799369306", name);
+    formData.append("entry.1993973963", email);
+    formData.append("entry.1333188775", phone);
+    formData.append("entry.348330403", eventType);
+
+    // Hall field (correct ID)
+    formData.append("entry.455664553", hall);
+
+    formData.append("entry.854385953_year", year);
+    formData.append("entry.854385953_month", month);
+    formData.append("entry.854385953_day", day);
+
+    formData.append("entry.819824424", message);
+
+    const GOOGLE_FORM_URL =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfKbGHcigFIBHuUg_0y1FzKP6lSAywn_Z0rUghZHbDS_pR7pQ/formResponse";
+
+    await fetch(GOOGLE_FORM_URL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+    });
+
+    alert("Your message has been sent! We will contact you shortly.");
+
+    e.target.reset();
+});
+</script>
+
 
 
 
@@ -2239,6 +2312,7 @@
                     <h3>UFO Celebration</h3>
                     <p>Creating unforgettable celebrations with creativity, precision, and passion. We transform your
                         vision into reality with our premium event management services.</p>
+                  
                     <div class="social-icons">
                         <a href="https://www.facebook.com/ufo.celebration" target="_blank"><i
                                 class="fab fa-facebook-f"></i></a>
@@ -2269,6 +2343,10 @@
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> UFO Celebration Party Lounge, 6th Floor, UFO Mall, Anisabad
                         Chauraha, Patna, Bihar, 800002</p>
+                          <a href="https://maps.app.goo.gl/Z9KovzDrhmucgvQJ8" target="_blank"
+                        style="display:block; margin-top:10px;  font-weight:600; color:white">
+                        👉 View on Google Maps
+                    </a><br>
                     <p><i class="fas fa-phone"></i> +91-9006652441</p>
                     <p><i class="fab fa-whatsapp"></i> +91-8083072721</p>
                     <p><i class="fas fa-envelope"></i> ufoanisabad@gmail.com</p>
